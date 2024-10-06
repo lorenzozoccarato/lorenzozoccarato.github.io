@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  background-color: white; /* Colore di sfondo per il tema chiaro */
+  color: black; /* Colore del testo per il tema chiaro */
+}
+
+.header {
+  background-color: white; /* Colore di sfondo per il tema chiaro */
+  color: black; /* Colore del testo per il tema chiaro */
+  border-bottom: 1px solid #ddd; /* Bordo inferiore per l'intestazione */
+}
+
+.dark {
+  background-color: #1a202c; /* Colore di sfondo per il tema scuro */
+  color: #f7fafc; /* Colore del testo per il tema scuro */
+}
+
+.dark .header {
+  background-color: #2d3748; /* Colore di sfondo per il tema scuro */
+  color: #f7fafc; /* Colore del testo per l'intestazione scura */
+  border-bottom: 1px solid #4a5568; /* Bordo inferiore per l'intestazione scura */
+}
+
+
+.nav-link {
+  color: gray; /* Colore dei link per tema chiaro */
+  transition: color 0.3s ease; /* Transizione per il cambio di colore */
+}
+
+.header .nav-link:hover {
+  color: black; /* Colore del link quando si passa il mouse sopra nel tema chiaro */
+}
+
+.dark .nav-link {
+  color: #f7fafc; /* Colore dei link per tema scuro */
+}
+
+.dark .header .nav-link:hover {
+  color: #e2e8f0; /* Colore del link quando si passa il mouse sopra nel tema scuro */
+}
+
