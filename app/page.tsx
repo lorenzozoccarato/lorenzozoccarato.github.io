@@ -81,7 +81,7 @@ const App: React.FC = () => {
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            <a href="#skills" className="text-gray-600 hover:text-gray-900 dark:text-white">{translations.skills}</a>
+            <a href="/skills" className="text-gray-600 hover:text-gray-900 dark:text-white">{translations.skills}</a>
             <a href="#projects" className="text-gray-600 hover:text-gray-900 dark:text-white">{translations.projects}</a>
             <a href="#blog" className="text-gray-600 hover:text-gray-900 dark:text-white">{translations.blog}</a>
           </nav>
@@ -122,7 +122,7 @@ const App: React.FC = () => {
 
         {menuOpen && (
           <div className="md:hidden px-6 py-4 space-y-2">
-            <a href="#skills" className="block text-gray-800 hover:text-gray-900 dark:text-white">{translations.skills}</a>
+            <a href="/skills" className="block text-gray-800 hover:text-gray-900 dark:text-white">{translations.skills}</a>
             <a href="#projects" className="block text-gray-800 hover:text-gray-900 dark:text-white">{translations.projects}</a>
             <a href="#blog" className="block text-gray-800 hover:text-gray-900 dark:text-white">{translations.blog}</a>
           </div>
@@ -133,4 +133,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
