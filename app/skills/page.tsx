@@ -1,5 +1,4 @@
 'use client';
-// app/skills/page.tsx
 
 import React from 'react';
 
@@ -13,7 +12,7 @@ const Skills: React.FC = () => {
         <li>React</li>
         <li>Node.js</li>
         <li>HTML & CSS</li>
-        {/* Aggiungi altre competenze qui */}
+        <li>Questo è un test</li>
       </ul>
     </div>
   );
