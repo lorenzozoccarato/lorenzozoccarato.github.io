@@ -14,7 +14,7 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    // Recupera il tema e la lingua da localStorage
+    
     const storedTheme = localStorage.getItem('theme');
     const storedLanguage = localStorage.getItem('language');
 
@@ -24,44 +24,38 @@ const App: React.FC = () => {
 
     if (storedLanguage) {
       setLanguage(storedLanguage);
-      loadLanguage(storedLanguage); // Carica le traduzioni se c'è una lingua salvata
+      loadLanguage(storedLanguage); 
     } else {
-      loadLanguage('it'); // Carica le traduzioni in italiano come default
+      loadLanguage('it'); 
     }
-
-    // Aggiorna il tema all'inizializzazione
+    
     if (storedTheme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   }, []);
-
-  // Cambia il tema
+  
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark'); // Aggiorna la classe HTML
+    document.documentElement.classList.toggle('dark', newTheme === 'dark'); 
   };
 
-  // Funzione per cambiare lingua e caricare le traduzioni
   const loadLanguage = async (lang: string) => {
     try {
-      setLanguage(lang); // Imposta subito la lingua
+      setLanguage(lang); 
 
-      // Carica il file JSON della lingua
       const response = await fetch(`/json/${lang}.json`);
       const data = await response.json();
 
-      // Aggiorna le traduzioni solo dopo aver caricato i dati
       setTranslations({
         blog: data.blog,
         projects: data.projects,
         skills: data.skills,
       });
 
-      // Salva la lingua selezionata nel localStorage
       localStorage.setItem('language', lang);
 
     } catch (error) {
@@ -74,7 +68,7 @@ const App: React.FC = () => {
       <header className="bg-white dark:bg-gray-900 shadow-sm">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="px-4 py-2 text-gray-800 dark:text-white">
-            {/* SVG del logo */}
+            {}
             <svg id="logo" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 500 500" strokeWidth="1.5" stroke="currentColor" style={{ width: '80px', height: '80px' }}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M174.6 138.1c-3.1 2.4-3.3 5.3-.6 9.4 1.1 1.7 2 4.7 2 7 0 3.7-23.3 88.3-26.7 96.7-1 2.5-3.1 5-5.9 6.9-6 4.1-8 7.3-6.6 10.4.7 1.6 2.2 2.6 4.4 3 1.8.3 27.2.5 56.3.3 51.4-.3 53.1-.4 56.5-2.4 4.8-2.7 7.3-7.8 11.9-23.5 4.3-14.6 5.9-16.9 12.9-18.8 3.8-1.1 22.2-1.5 22.2-.5 0 .3-16.1 17.5-35.7 38.2-19.6 20.7-39.2 41.4-43.4 45.9-9.4 9.9-12.3 15.1-11.6 20.6.7 4.9 4.8 9.4 9.9 10.8 2.4.6 22.7.9 55.7.7 50.9-.3 52-.3 54.8-2.4 4.8-3.6 6.8-7.6 10.7-22 4.4-15.8 4.2-17.8-1.7-20.7-2.7-1.4-4.8-1.7-8-1.2-3.7.6-5.4 1.9-15.7 12.4-6.3 6.5-12.5 12.4-13.7 13-1.3.7-7.8 1.1-16.5 1.1h-14.3l46.4-46.4c25.6-25.5 47-47.5 47.7-48.9 3.9-7.4 1.9-15.7-4.6-18.9-3.2-1.6-8-1.8-56-1.8-48.7 0-52.8.2-56.5 1.9-4.8 2.2-7.2 6.4-11 19.3-2 7-3.5 9.8-7.5 14.6-6.5 7.8-9.6 9.2-20.4 9.2-4.7 0-8.6-.2-8.6-.4 0-1.1 25.2-89.5 26.6-93.3.8-2.3 3.2-5.6 5.2-7.3 2-1.7 4.7-4 6-5 2.8-2.4 3-7.5.3-9-1.2-.6-13.2-1-31.9-1-28.8 0-30 .1-32.6 2.1z"/>
             </svg>
@@ -99,7 +93,7 @@ const App: React.FC = () => {
               )}
             </button>
 
-            {/* Mostra la bandiera in base alla lingua selezionata */}
+            {}
             {language === 'it' ? (
               <button onClick={() => loadLanguage('en')} className="p-2">
                 <img src="/images/it.svg" alt="English" className="h-6 w-6" />
